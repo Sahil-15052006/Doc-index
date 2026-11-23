@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3f0e8;
+  --surface: #fbf9f3;
+  --ink: #141414;
+
+  --accent: #ff4d1f;
+  --accent-ink: #14110d;
+  --accent-strong: #c0350f;
+  --accent-on-ink: #ff8a66;
+
+  --cobalt: #2f5cff;
+  --cobalt-ink: #ffffff;
+  --cobalt-strong: #2447d8;
+
+  --acid: #c8f04e;
+  --acid-ink: #141414;
+
+  --grape: #6941ff;
+  --grape-ink: #ffffff;
+
+  color-scheme: light;
+}
+
+.dark {
+  --paper: #0d0d0b;
+  --surface: #171714;
+  --ink: #f2efe6;
+
+  --accent: #ff6a3d;
+  --accent-ink: #120f0c;
+  --accent-strong: #ff9a78;
+  --accent-on-ink: #b8320b;
+
+  --cobalt: #8aa2ff;
+  --cobalt-ink: #0d0d0b;
+  --cobalt-strong: #a9bcff;
+
+  --acid: #d4ff72;
+  --acid-ink: #121212;
+
+  --grape: #b9a5ff;
+  --grape-ink: #0d0d0b;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-on-ink: var(--accent-on-ink);
+
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-ink: var(--cobalt-ink);
+  --color-cobalt-strong: var(--cobalt-strong);
+
+  --color-acid: var(--acid);
+  --color-acid-ink: var(--acid-ink);
+
+  --color-grape: var(--grape);
+  --color-grape-ink: var(--grape-ink);
+
+  --font-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--paper);
+  font-synthesis-weight: none;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Numeric data reads more cleanly with fixed-width digits. */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth cross-fade of every color while the theme is switching. */
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease,
+    fill 300ms ease,
+    stroke 300ms ease !important;
+}
+
+/* Keep the whole interface strictly square-edged. */
+* {
+  border-radius: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: none !important;
+  }
+}

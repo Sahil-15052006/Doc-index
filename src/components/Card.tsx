@@ -5,7 +5,6 @@ import { getCategoryTone, toneStyles } from "../lib/categories";
 
 type CardProps = {
   doc: Doc;
-  index?: number;
   /** Wide editorial variant used for the lead featured doc. */
   wide?: boolean;
 };
@@ -13,7 +12,7 @@ type CardProps = {
 /**
  * Shared documentation card — used on both the home page and the docs page.
  */
-export function Card({ doc, index, wide = false }: CardProps) {
+export function Card({ doc, wide = false }: CardProps) {
   const tone = toneStyles[getCategoryTone(doc.field)];
 
   return (
@@ -40,15 +39,6 @@ export function Card({ doc, index, wide = false }: CardProps) {
           <span aria-hidden="true" className={`inline-block size-1.5 ${tone.dot}`} />
           {doc.field}
         </span>
-        {typeof index === "number" && (
-          <span
-            className={`tabular-nums font-mono font-medium tracking-[0.16em] text-ink/60 ${
-              wide ? "text-sm sm:text-base" : "text-[11px]"
-            }`}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        )}
       </div>
 
       <div

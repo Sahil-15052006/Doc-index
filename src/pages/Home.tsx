@@ -89,7 +89,6 @@ export function Home() {
               <ColorTrio />
               Personal documentation index
             </span>
-            <span className="hidden sm:inline">Vol. 01 — {site.updated}</span>
           </div>
 
           <div className="grid gap-12 py-14 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-16 lg:py-20 xl:py-24">
@@ -191,7 +190,6 @@ export function Home() {
                   large
                   tone="text-cobalt-strong"
                 />
-                <Stat label="Updated" value={site.updated} />
               </dl>
 
               <div className="border-t border-ink/15 bg-ink px-5 py-4 text-paper">
@@ -254,7 +252,7 @@ export function Home() {
                 delay={index * 0.08}
                 className={index === 0 ? "h-full md:col-span-2" : "h-full"}
               >
-                <Card doc={doc} index={index} wide={index === 0} />
+                <Card doc={doc} wide={index === 0} />
               </Reveal>
             ))}
           </div>

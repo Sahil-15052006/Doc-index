@@ -24,7 +24,7 @@ export type Doc = {
 
 export const docs: Doc[] = [
   {
-    id: "AWS",
+    id: "s3-static-website",
     name: 'Host a Website on Amazon S3',
     field: "Cloud",
     link: "https://nextwork.ai/sahil/docs/70e2d059-31ab-5f67-8c58-f5edbd451140",
@@ -33,7 +33,7 @@ export const docs: Doc[] = [
     featured: true,
   },
   {
-    id: "AWS",
+    id: "aws-account-setup",
     name: 'Set Up An AWS Account',
     field: "Cloud",
     link: "https://nextwork.ai/sahil/docs/90e42921-e1f4-5c44-8a1f-394b21d79093",

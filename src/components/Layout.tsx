@@ -168,7 +168,7 @@ export function Layout() {
 
             <div className="flex flex-col gap-3 sm:items-end">
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-paper/65">
-                © {new Date().getFullYear()} — Built with React + TS + Tailwind
+                © {new Date().getFullYear()} — {site.owner}
               </p>
               <button
                 type="button"
